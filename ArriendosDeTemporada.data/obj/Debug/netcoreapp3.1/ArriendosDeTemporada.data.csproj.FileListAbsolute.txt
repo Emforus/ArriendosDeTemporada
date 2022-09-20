@@ -1,0 +1,15 @@
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.data.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.data.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.data.AssemblyInfo.cs
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.data.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.data.deps.json
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.data.runtimeconfig.json
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.data.runtimeconfig.dev.json
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.data.dll
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.data.pdb
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.core.dll
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.core.pdb
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.data.csproj.CopyComplete
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.data.dll
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.data.pdb
+C:\Users\Asus\source\repos\ArriendosDeTemporada.data\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.data.genruntimeconfig.cache

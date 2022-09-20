@@ -1,0 +1,14 @@
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.business.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.business.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.business.AssemblyInfo.cs
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.business.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.business.deps.json
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.business.dll
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.business.pdb
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.core.dll
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.data.dll
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.core.pdb
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.data.pdb
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.business.csproj.CopyComplete
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.business.dll
+C:\Users\Asus\source\repos\ArriendosDeTemporada.business\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.business.pdb
