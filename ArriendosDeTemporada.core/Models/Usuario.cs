@@ -13,6 +13,7 @@ namespace ArriendosDeTemporada.core.Models
         public string nombreUsuario { get; set; }
         public DateTime fechaRegistroUsuario { get; set; }
         public DateTime lastLogOn { get; set; }
+        public string passwordHash { get; set; }
         public bool estadoLogico { get; set; }
         public List<Factura> facturas { get; set; }
     }

@@ -16,5 +16,9 @@ namespace ArriendosDeTemporada.data.Repos
         {
             return _context.Set<Usuario>().Where(x => x.ID == id && x.estadoLogico).AsQueryable().FirstOrDefaultAsync();
         }
+        public Task<Usuario> GetUsuarioByUsername(string uid)
+        {
+            return _context.Set<Usuario>().Where(x => x.UID == uid && x.estadoLogico).AsQueryable().FirstOrDefaultAsync();
+        }
     }
 }

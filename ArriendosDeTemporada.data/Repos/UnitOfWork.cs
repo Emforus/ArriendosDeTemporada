@@ -15,6 +15,7 @@ namespace ArriendosDeTemporada.data.Repos
         private IUsuarioRepo _UsuarioRepo;
         private IDepartamentoRepo _DepartamentoRepo;
         private IFacturaRepo _FacturaRepo;
+        private IUtilidadRepo _UtilidadRepo;
         public UnitOfWork(DatabaseContext context)
         {
             _context = context;
@@ -33,6 +34,11 @@ namespace ArriendosDeTemporada.data.Repos
         public IFacturaRepo Facturas
         {
             get { return _FacturaRepo = _FacturaRepo ?? new FacturaRepo(_context); }
+        }
+
+        public IUtilidadRepo Utilidades
+        {
+            get { return _UtilidadRepo = _UtilidadRepo ?? new UtilidadRepo(_context); }
         }
 
         public void Commit()

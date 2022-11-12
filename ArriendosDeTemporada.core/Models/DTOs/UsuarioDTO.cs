@@ -13,5 +13,6 @@ namespace ArriendosDeTemporada.core.Models.DTOs
         public string nombreUsuario { get; set; }
         public DateTime fechaRegistroUsuario { get; set; }
         public DateTime lastLogOn { get; set; }
+        public bool estadoLogico { get; set; }
     }
 }

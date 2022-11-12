@@ -4,22 +4,21 @@ using System.Text;
 
 namespace ArriendosDeTemporada.core.Models
 {
-    public enum Estado
-    {
-        Disponible,
-        Reservado,
-        EnUso,
-        MantencionAgendada,
-        EnMantencion
-    }
-
     public class Departamento
     {
         public int idDepartamento { get; set; }
         public string ubicacionDepartamento { get; set; }
-        public int tamañoDepartamento { get; set; }
-        public Estado Estado { get; set; }
+        public string regionDepartamento { get; set; }
+        public int valorBase { get; set; }
+        public string descripcionDepartamento { get; set; }
+        public int cantidadDormitorios { get; set; }
+        public string Estado { get; set; }
+        public DateTime fechaRegistroDepartamento { get; set; }
+        public DateTime? fechaUltimaReserva { get; set; }
+        public DateTime? fechaUltimaMantencion { get; set; }
         public bool estadoLogico { get; set; }
+        public GenericService serviciosPrincipales { get; set; }
+        public List<string> fotografias { get; set; }
         public List<Utilidad> utilidades { get; set; }
         public List<Factura> facturas { get; set; }
     }

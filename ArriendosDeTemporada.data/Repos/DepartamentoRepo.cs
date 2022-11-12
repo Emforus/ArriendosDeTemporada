@@ -12,9 +12,9 @@ namespace ArriendosDeTemporada.data.Repos
     public class DepartamentoRepo : Repository<Departamento>, Shared.IDepartamentoRepo
     {
         public DepartamentoRepo(DatabaseContext context) : base(context) { }
-        public Task<Departamento> GetDepartamento(int id)
+        public IQueryable<Departamento> GetDepartamento(int id)
         {
-            return _context.Set<Departamento>().Where(x => x.idDepartamento == id).AsQueryable().FirstOrDefaultAsync();
+            return _context.Set<Departamento>().Where(x => x.idDepartamento == id);
         }
     }
 }

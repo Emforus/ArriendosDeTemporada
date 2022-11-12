@@ -9,6 +9,7 @@ namespace ArriendosDeTemporada.data.Repos.Shared
         IUsuarioRepo Usuarios { get; }
         IDepartamentoRepo Departamentos { get; }
         IFacturaRepo Facturas { get; }
+        IUtilidadRepo Utilidades { get; }
         void Commit();
         void CommitAsync();
         void Rollback();

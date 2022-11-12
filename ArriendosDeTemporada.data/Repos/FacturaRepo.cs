@@ -12,9 +12,9 @@ namespace ArriendosDeTemporada.data.Repos
     public class FacturaRepo : Repository<Factura>, Shared.IFacturaRepo
     {
         public FacturaRepo(DatabaseContext context) : base(context) { }
-        public Task<Factura> GetFactura(int id)
+        public IQueryable<Factura> GetFactura(int id)
         {
-            return _context.Set<Factura>().Where(x => x.ID == id).AsQueryable().FirstOrDefaultAsync();
+            return _context.Set<Factura>().Where(x => x.ID == id);
         }
     }
 }

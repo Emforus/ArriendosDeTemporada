@@ -1,44 +1,66 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31321.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArriendosDeTemporada.api", "ArriendosDeTemporada.api.csproj", "{50FB54C9-ED09-428B-9954-790E1D2BDC3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArriendosDeTemporada.api", "ArriendosDeTemporada.api.csproj", "{50FB54C9-ED09-428B-9954-790E1D2BDC3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArriendosDeTemporada.core", "..\ArriendosDeTemporada.core\ArriendosDeTemporada.core.csproj", "{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArriendosDeTemporada.core", "..\ArriendosDeTemporada.core\ArriendosDeTemporada.core.csproj", "{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArriendosDeTemporada.data", "..\ArriendosDeTemporada.data\ArriendosDeTemporada.data.csproj", "{37B6D693-E4A2-4D16-9C27-63672321E8EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArriendosDeTemporada.data", "..\ArriendosDeTemporada.data\ArriendosDeTemporada.data.csproj", "{37B6D693-E4A2-4D16-9C27-63672321E8EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArriendosDeTemporada.root", "..\ArriendosDeTemporada.root\ArriendosDeTemporada.root.csproj", "{DF97E718-D798-4F4D-AF9D-E2286E2555C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArriendosDeTemporada.root", "..\ArriendosDeTemporada.root\ArriendosDeTemporada.root.csproj", "{DF97E718-D798-4F4D-AF9D-E2286E2555C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArriendosDeTemporada.business", "..\ArriendosDeTemporada.business\ArriendosDeTemporada.business.csproj", "{0C80BD9F-229B-4C08-A172-F81B7FF0D422}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArriendosDeTemporada.business", "..\ArriendosDeTemporada.business\ArriendosDeTemporada.business.csproj", "{0C80BD9F-229B-4C08-A172-F81B7FF0D422}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{50FB54C9-ED09-428B-9954-790E1D2BDC3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{50FB54C9-ED09-428B-9954-790E1D2BDC3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50FB54C9-ED09-428B-9954-790E1D2BDC3A}.Debug|x86.ActiveCfg = Debug|x86
+		{50FB54C9-ED09-428B-9954-790E1D2BDC3A}.Debug|x86.Build.0 = Debug|x86
 		{50FB54C9-ED09-428B-9954-790E1D2BDC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50FB54C9-ED09-428B-9954-790E1D2BDC3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50FB54C9-ED09-428B-9954-790E1D2BDC3A}.Release|x86.ActiveCfg = Release|x86
+		{50FB54C9-ED09-428B-9954-790E1D2BDC3A}.Release|x86.Build.0 = Release|x86
 		{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}.Debug|x86.ActiveCfg = Debug|x86
+		{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}.Debug|x86.Build.0 = Debug|x86
 		{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}.Release|x86.ActiveCfg = Release|x86
+		{8D90BA0F-3593-4A63-B7F4-420E7B78AB5D}.Release|x86.Build.0 = Release|x86
 		{37B6D693-E4A2-4D16-9C27-63672321E8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{37B6D693-E4A2-4D16-9C27-63672321E8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B6D693-E4A2-4D16-9C27-63672321E8EF}.Debug|x86.ActiveCfg = Debug|x86
+		{37B6D693-E4A2-4D16-9C27-63672321E8EF}.Debug|x86.Build.0 = Debug|x86
 		{37B6D693-E4A2-4D16-9C27-63672321E8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37B6D693-E4A2-4D16-9C27-63672321E8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B6D693-E4A2-4D16-9C27-63672321E8EF}.Release|x86.ActiveCfg = Release|x86
+		{37B6D693-E4A2-4D16-9C27-63672321E8EF}.Release|x86.Build.0 = Release|x86
 		{DF97E718-D798-4F4D-AF9D-E2286E2555C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DF97E718-D798-4F4D-AF9D-E2286E2555C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF97E718-D798-4F4D-AF9D-E2286E2555C5}.Debug|x86.ActiveCfg = Debug|x86
+		{DF97E718-D798-4F4D-AF9D-E2286E2555C5}.Debug|x86.Build.0 = Debug|x86
 		{DF97E718-D798-4F4D-AF9D-E2286E2555C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF97E718-D798-4F4D-AF9D-E2286E2555C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF97E718-D798-4F4D-AF9D-E2286E2555C5}.Release|x86.ActiveCfg = Release|x86
+		{DF97E718-D798-4F4D-AF9D-E2286E2555C5}.Release|x86.Build.0 = Release|x86
 		{0C80BD9F-229B-4C08-A172-F81B7FF0D422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0C80BD9F-229B-4C08-A172-F81B7FF0D422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C80BD9F-229B-4C08-A172-F81B7FF0D422}.Debug|x86.ActiveCfg = Debug|x86
+		{0C80BD9F-229B-4C08-A172-F81B7FF0D422}.Debug|x86.Build.0 = Debug|x86
 		{0C80BD9F-229B-4C08-A172-F81B7FF0D422}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C80BD9F-229B-4C08-A172-F81B7FF0D422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C80BD9F-229B-4C08-A172-F81B7FF0D422}.Release|x86.ActiveCfg = Release|x86
+		{0C80BD9F-229B-4C08-A172-F81B7FF0D422}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

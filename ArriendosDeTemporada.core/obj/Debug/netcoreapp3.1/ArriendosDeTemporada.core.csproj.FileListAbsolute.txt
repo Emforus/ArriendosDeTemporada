@@ -7,3 +7,13 @@ C:\Users\Asus\source\repos\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\Arr
 C:\Users\Asus\source\repos\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.csproj.CoreCompileInputs.cache
 C:\Users\Asus\source\repos\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.dll
 C:\Users\Asus\source\repos\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.pdb
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.core.deps.json
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.core.dll
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\bin\Debug\netcoreapp3.1\ArriendosDeTemporada.core.pdb
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.csproj.AssemblyReference.cache
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.AssemblyInfoInputs.cache
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.AssemblyInfo.cs
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.csproj.CoreCompileInputs.cache
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.dll
+C:\Users\cami_escobarj\Desktop\ArriendosDeTemporada\ArriendosDeTemporada.core\obj\Debug\netcoreapp3.1\ArriendosDeTemporada.core.pdb

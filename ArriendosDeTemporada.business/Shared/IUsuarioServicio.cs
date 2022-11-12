@@ -12,9 +12,12 @@ namespace ArriendosDeTemporada.business.Shared
     {
         IEnumerable<UsuarioDTO> ListarUsuarios();
         Task<UsuarioDTO> BuscarUsuario(int id);
+        Task<UsuarioDTO> BuscarUsername(string username);
         void CrearUsuario(Usuario Usuario);
-        Task<Usuario> DeshabilitarUsuario(int id);
-
-        // void RemoverUsuario(Usuario Usuario);
+        Task<Usuario> EditarUsuario(int id, Usuario Usuario);
+        Task<Usuario> CambiarContraseña(AuthDataDTO data);
+        Task<Usuario> SetEstadoUsuario(int id);
+        Task<bool> Autenticar(AuthDataDTO data);
+        Task<Usuario> RemoverUsuario(int id);
     }
 }

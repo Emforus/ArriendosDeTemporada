@@ -26,12 +26,25 @@ namespace ArriendosDeTemporada
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder => builder.AllowAnyOrigin());
+                options.AddPolicy("AllowAllMethods",
+                    builder => builder.AllowAnyMethod());
+                options.AddPolicy("AllowAllHeaders",
+                    builder => builder.AllowAnyHeader());
+            });
+
             services.AddControllers();
             CompositionRoot.injectDependencies(services);
             services.AddControllers().AddJsonOptions(o =>
             {
                 o.JsonSerializerOptions.IgnoreNullValues = true;
             });
+            services.AddControllers().AddNewtonsoftJson(o =>
+                o.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +55,11 @@ namespace ArriendosDeTemporada
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            app.UseCors(builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            );
 
             app.UseRouting();
 

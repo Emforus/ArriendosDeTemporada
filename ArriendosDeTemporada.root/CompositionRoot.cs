@@ -22,7 +22,7 @@ namespace ArriendosDeTemporada.root
         public static void injectDependencies(IServiceCollection services)
         {
             // STRING DE CONEXION A DB, CAMBIAR ESTO PARA CAMBIAR DE BASE DE DATOS
-            string DatabaseConnectionStr = "host=localhost; port=5433; database=ArriendosDeTemporada; user id=postgres; password=1234";
+            string DatabaseConnectionStr = "host=localhost; port=5432; database=ArriendosDeTemporada; user id=postgres; password=admin";
             services.AddDbContextPool<DatabaseContext>(options => options.UseNpgsql(DatabaseConnectionStr));
 
             services.AddAutoMapper(typeof(PerfilUsuario), typeof(PerfilDepartamento), typeof(PerfilFactura), 
@@ -35,9 +35,12 @@ namespace ArriendosDeTemporada.root
             services.AddScoped<IUsuarioRepo, UsuarioRepo>();
             services.AddScoped<IDepartamentoRepo, DepartamentoRepo>();
             services.AddScoped<IFacturaRepo, FacturaRepo>();
+            services.AddScoped<IUtilidadRepo, UtilidadRepo>();
 
             // Añadir servicios a dependencias
             services.AddScoped<IUsuarioServicio, UsuarioServicio>();
+            services.AddScoped<IDepartamentoServicio, DepartamentoServicio>();
+            services.AddScoped<IFacturaServicio, FacturaServicio>();
         }
     }
 }
