@@ -12,11 +12,15 @@ namespace ArriendosDeTemporada.core.Models
         public DateTime? fechaHoraCheckOut { get; set; }
         public DateTime fechaHoraReserva { get; set; }
         public int duracion { get; set; }
+        public int valor { get; set; }
         public int valorIVA { get; set; }
+        public int valorDeposito { get; set; }
+        public int valorServicios { get; set; }
         public int cantidadClientes { get; set; }
         public string estado { get; set; }
         public Usuario usuario { get; set; }
         public Departamento departamento { get; set; }
+        public Multa multa { get; set; }
         public ICollection<ServicioExtra> Servicios { get; set; }
         public List<ServicioFactura> ServiciosPorFactura { get; set; }
     }

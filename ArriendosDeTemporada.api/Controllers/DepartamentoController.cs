@@ -71,9 +71,9 @@ namespace ArriendosDeTemporada.api.Controllers
                 }
                 return Ok(departamento);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error interno: No se pudo realizar la operacion");
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
             }
         }
 
@@ -110,6 +110,77 @@ namespace ArriendosDeTemporada.api.Controllers
             catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error interno: No se pudo realizar la operacion");
+            }
+        }
+        [HttpGet("{id:int}/utilidades")]
+        public async Task<ActionResult<List<Utilidad>>> GetUtilidades(int id)
+        {
+            try
+            {
+                var depto = await departamentoServicio.ListarUtilidades(id);
+                if (depto == null)
+                {
+                    return NotFound($"Error desconocido.");
+                }
+                return Ok(depto);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error interno: No se pudo realizar la operacion");
+            }
+        }
+
+        [HttpPost("{id:int}/utilidades")]
+        public async Task<ActionResult<Departamento>> AddUtilidades([FromBody] Utilidad[] utilidades, int id)
+        {
+            try
+            {
+                var depto = await departamentoServicio.AñadirUtilidades(utilidades, id);
+                if (depto == null)
+                {
+                    return NotFound($"Error desconocido.");
+                }
+                return Ok(depto);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error interno: No se pudo realizar la operacion");
+            }
+        }
+
+        [HttpPut("{id:int}/utilidades")]
+        public async Task<ActionResult<Departamento>> RemoveUtilidades([FromBody] Utilidad[] utilidades, int id)
+        {
+            try
+            {
+                var depto = await departamentoServicio.RemoverUtilidades(utilidades, id);
+                if (depto == null)
+                {
+                    return NotFound($"Error desconocido.");
+                }
+                return Ok(depto);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
+            }
+        }
+
+        [HttpGet("{id:int}/servicios")]
+        public async Task<ActionResult<Departamento>> GetServicios(int id)
+        {
+            try
+            {
+                var servicios = await departamentoServicio.ListarServiciosDisponibles(id);
+                if (servicios == null)
+                {
+                    return NotFound($"Departamento con ID {id} no encontrado o no tiene servicios disponibles registrados.");
+                }
+                return Ok(servicios);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
             }
         }
 

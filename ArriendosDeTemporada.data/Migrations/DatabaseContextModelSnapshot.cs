@@ -105,7 +105,16 @@ namespace ArriendosDeTemporada.data.Migrations
                     b.Property<int?>("usuarioID")
                         .HasColumnType("int");
 
+                    b.Property<int>("valor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("valorDeposito")
+                        .HasColumnType("int");
+
                     b.Property<int>("valorIVA")
+                        .HasColumnType("int");
+
+                    b.Property<int>("valorServicios")
                         .HasColumnType("int");
 
                     b.HasKey("ID")
@@ -162,6 +171,45 @@ namespace ArriendosDeTemporada.data.Migrations
                         .IsUnique();
 
                     b.ToTable("ServiciosGenericos");
+                });
+
+            modelBuilder.Entity("ArriendosDeTemporada.core.Models.Multa", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("IDFactura")
+                        .HasColumnType("int");
+
+                    b.Property<string>("descripcion")
+                        .HasColumnType("text");
+
+                    b.Property<int>("valor")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("IDFactura")
+                        .IsUnique();
+
+                    b.ToTable("Multa");
+                });
+
+            modelBuilder.Entity("ArriendosDeTemporada.core.Models.ServicioDepartamento", b =>
+                {
+                    b.Property<int>("IDServicio")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IDDepartamento")
+                        .HasColumnType("int");
+
+                    b.HasKey("IDServicio", "IDDepartamento");
+
+                    b.HasIndex("IDDepartamento");
+
+                    b.ToTable("ServicioDepartamento");
                 });
 
             modelBuilder.Entity("ArriendosDeTemporada.core.Models.ServicioExtra", b =>
@@ -278,10 +326,20 @@ namespace ArriendosDeTemporada.data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<int?>("MultaID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("cantidad")
+                        .HasColumnType("int");
+
                     b.Property<int?>("departamentoidDepartamento")
                         .HasColumnType("int");
 
                     b.Property<string>("descripcion")
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("estado")
+                        .IsRequired()
                         .HasColumnType("varchar(40)");
 
                     b.Property<string>("nombre")
@@ -293,6 +351,8 @@ namespace ArriendosDeTemporada.data.Migrations
 
                     b.HasKey("ID")
                         .HasName("PK_Utilidad");
+
+                    b.HasIndex("MultaID");
 
                     b.HasIndex("departamentoidDepartamento");
 
@@ -323,6 +383,36 @@ namespace ArriendosDeTemporada.data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ArriendosDeTemporada.core.Models.Multa", b =>
+                {
+                    b.HasOne("ArriendosDeTemporada.core.Models.Factura", "factura")
+                        .WithOne("multa")
+                        .HasForeignKey("ArriendosDeTemporada.core.Models.Multa", "IDFactura")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("factura");
+                });
+
+            modelBuilder.Entity("ArriendosDeTemporada.core.Models.ServicioDepartamento", b =>
+                {
+                    b.HasOne("ArriendosDeTemporada.core.Models.Departamento", "Departamento")
+                        .WithMany("ServiciosDisponibles")
+                        .HasForeignKey("IDDepartamento")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ArriendosDeTemporada.core.Models.ServicioExtra", "Servicio")
+                        .WithMany("ServiciosDisponibles")
+                        .HasForeignKey("IDServicio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Departamento");
+
+                    b.Navigation("Servicio");
+                });
+
             modelBuilder.Entity("ArriendosDeTemporada.core.Models.ServicioFactura", b =>
                 {
                     b.HasOne("ArriendosDeTemporada.core.Models.Factura", "Factura")
@@ -344,6 +434,10 @@ namespace ArriendosDeTemporada.data.Migrations
 
             modelBuilder.Entity("ArriendosDeTemporada.core.Models.Utilidad", b =>
                 {
+                    b.HasOne("ArriendosDeTemporada.core.Models.Multa", null)
+                        .WithMany("utilidades")
+                        .HasForeignKey("MultaID");
+
                     b.HasOne("ArriendosDeTemporada.core.Models.Departamento", "departamento")
                         .WithMany("utilidades")
                         .HasForeignKey("departamentoidDepartamento");
@@ -355,6 +449,8 @@ namespace ArriendosDeTemporada.data.Migrations
                 {
                     b.Navigation("facturas");
 
+                    b.Navigation("ServiciosDisponibles");
+
                     b.Navigation("serviciosPrincipales");
 
                     b.Navigation("utilidades");
@@ -362,11 +458,20 @@ namespace ArriendosDeTemporada.data.Migrations
 
             modelBuilder.Entity("ArriendosDeTemporada.core.Models.Factura", b =>
                 {
+                    b.Navigation("multa");
+
                     b.Navigation("ServiciosPorFactura");
+                });
+
+            modelBuilder.Entity("ArriendosDeTemporada.core.Models.Multa", b =>
+                {
+                    b.Navigation("utilidades");
                 });
 
             modelBuilder.Entity("ArriendosDeTemporada.core.Models.ServicioExtra", b =>
                 {
+                    b.Navigation("ServiciosDisponibles");
+
                     b.Navigation("ServiciosPorFactura");
                 });
 

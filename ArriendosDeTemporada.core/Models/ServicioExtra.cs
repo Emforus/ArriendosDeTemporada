@@ -17,5 +17,7 @@ namespace ArriendosDeTemporada.core.Models
         public bool servicioUnitario { get; set; }
         public ICollection<Factura> Facturas { get; set; }
         public List<ServicioFactura> ServiciosPorFactura { get; set; }
+        public ICollection<Departamento> Departamentos { get; set; }
+        public List<ServicioDepartamento> ServiciosDisponibles { get; set; }
     }
 }

@@ -10,6 +10,8 @@ namespace ArriendosDeTemporada.core.Models
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public int valor { get; set; }
+        public int cantidad { get; set; }
+        public string estado { get; set; }
         public Departamento departamento { get; set; }
     }
 }

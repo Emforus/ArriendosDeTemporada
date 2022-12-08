@@ -11,13 +11,7 @@ namespace ArriendosDeTemporada.root.Profiles
     {
         public PerfilFactura()
         {
-            CreateMap<Factura, FacturaDTO>().ForMember(
-                x => x.valorTotal, y => y.MapFrom(z => DeterminarValor(z.departamento.valorBase, z.duracion, z.valorIVA))).ReverseMap();
-        }
-
-        private static int DeterminarValor(int valor, int dias, int iva)
-        {
-            return (valor * dias) + iva;
+            CreateMap<Factura, FacturaDTO>().ReverseMap();
         }
     }
 }

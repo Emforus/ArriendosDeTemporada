@@ -10,6 +10,7 @@ using AutoMapper;
 using BCrypt.Net;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Collections;
 
 namespace ArriendosDeTemporada.business
 {
@@ -72,6 +73,81 @@ namespace ArriendosDeTemporada.business
                 Departamento.cantidadDormitorios = depto.cantidadDormitorios;
                 Departamento.Estado = depto.Estado;
                 Departamento.fotografias = depto.fotografias;
+                Departamento.serviciosPrincipales = depto.serviciosPrincipales;
+
+                var Utilidades = await _unitOfWork.Utilidades.GetUtilidadesByDepartamento(id);
+                depto.utilidades ??= new List<Utilidad>();
+                Departamento.utilidades ??= new List<Utilidad>();
+                //Eliminar registros no detectados
+                foreach (Utilidad item in Utilidades)
+                {
+                    var util = depto.utilidades.Find(x => x.ID == item.ID);
+                    if (util != null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Departamento.utilidades.Remove(item);
+                        _unitOfWork.Utilidades.Delete(item);
+                    }
+                }
+
+                //Actualizar existentes, registrar nuevas
+                foreach (Utilidad item in depto.utilidades)
+                {
+                    if (item.ID == 0)
+                    {
+                        item.departamento = Departamento;
+                        Departamento.utilidades.Add(item);
+                        _unitOfWork.Utilidades.Add(item);
+                    }
+                    else
+                    {
+                        var util = Utilidades.Find(x => x.ID == item.ID);
+                        if (util != null)
+                        {
+                            util.nombre = item.nombre;
+                            util.valor = item.valor;
+                            util.descripcion = item.descripcion;
+                            util.cantidad = item.cantidad;
+                            util.estado = item.estado;
+                        }
+                    }
+                }
+
+                var Servicios = await _unitOfWork.Departamentos.GetServiciosPorDepartamento(id);
+                depto.ServiciosDisponibles ??= new List<ServicioDepartamento>();
+                Departamento.ServiciosDisponibles ??= new List<ServicioDepartamento>();
+                //Eliminar registros no detectados
+                foreach (ServicioDepartamento svc in Servicios)
+                {
+                    var item = depto.ServiciosDisponibles.Find(x => x.IDServicio == svc.IDServicio);
+                    if (item != null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Departamento.ServiciosDisponibles.Remove(svc);
+                        _unitOfWork.Servicios.DeleteFromDepartamento(svc);
+                    }
+                }
+
+                //Registrar nuevos
+                foreach (ServicioDepartamento svc in depto.ServiciosDisponibles)
+                {
+                    var item = Servicios.Find(x => x.IDServicio == svc.IDServicio);
+                    if (item != null)
+                    {
+                        continue;
+                    } else { 
+                        svc.Departamento = Departamento;
+                        svc.Servicio = null;
+                        Departamento.ServiciosDisponibles.Add(svc);
+                        _unitOfWork.Servicios.AddToDepartamento(svc);
+                    }
+                }
 
                 _unitOfWork.Commit();
 
@@ -92,6 +168,11 @@ namespace ArriendosDeTemporada.business
                 factura.departamento = Departamento;
                 factura.fechaHoraGeneracion = DateTime.Now;
                 factura.estado = "Pendiente";
+                foreach (ServicioFactura item in factura.ServiciosPorFactura)
+                {
+                    item.Servicio = null;
+                    item.Factura = factura;
+                }
 
                 _unitOfWork.Facturas.Add(factura);
 
@@ -108,35 +189,67 @@ namespace ArriendosDeTemporada.business
             return null;
         }
 
-        public async Task<Utilidad> AñadirUtilidad(Utilidad util, int id)
+        public async Task<IQueryable<UtilidadDTO>> ListarUtilidades(int id)
         {
             var Departamento = await _unitOfWork.Departamentos.GetDepartamento(id).FirstOrDefaultAsync();
-            if (Departamento != null && util != null)
+            if (Departamento != null)
             {
-                util.departamento = Departamento;
-                Departamento.utilidades.Add(util);
-                _unitOfWork.Utilidades.Add(util);
-
-                _unitOfWork.Commit();
-
-                return util;
+                var Utilidades = await _unitOfWork.Utilidades.GetUtilidadesByDepartamento(id);
+                return _mapper.ProjectTo<UtilidadDTO>(Utilidades.AsQueryable());
+                
             }
             return null;
         }
 
-        public async Task<Utilidad> RemoverUtilidad(Utilidad util, int id)
+        public async Task<IQueryable<ServicioDepartamentoDTO>> ListarServiciosDisponibles(int id)
+        {
+            var Departamento = await _unitOfWork.Departamentos.GetDepartamento(id).FirstOrDefaultAsync();
+            if (Departamento != null)
+            {
+                var Servicios = await _unitOfWork.Departamentos.GetServiciosPorDepartamento(id);
+                return _mapper.ProjectTo<ServicioDepartamentoDTO>(Servicios.AsQueryable());
+
+            }
+            return null;
+        }
+
+        public async Task<Departamento> AñadirUtilidades(Utilidad[] util, int id)
         {
             var Departamento = await _unitOfWork.Departamentos.GetDepartamento(id).FirstOrDefaultAsync();
             if (Departamento != null && util != null)
             {
-                if (Departamento.utilidades.Remove(util))
+                Departamento.utilidades = Departamento.utilidades ?? await _unitOfWork.Utilidades.GetUtilidadesByDepartamento(id);
+                foreach (Utilidad u in util)
                 {
-                    _unitOfWork.Utilidades.Delete(util);
-
-                    _unitOfWork.Commit();
-                    return util;
+                    u.departamento = Departamento;
+                    Departamento.utilidades.Add(u);
                 }
-                return null;
+                _unitOfWork.Utilidades.AddMany(util);
+
+                _unitOfWork.Commit();
+
+                return Departamento;
+            }
+            return null;
+        }
+
+        public async Task<Departamento> RemoverUtilidades(Utilidad[] util, int id)
+        {
+            var Departamento = await _unitOfWork.Departamentos.GetDepartamento(id).FirstOrDefaultAsync();
+            if (Departamento != null && util != null)
+            {
+                Departamento.utilidades ??= await _unitOfWork.Utilidades.GetUtilidadesByDepartamento(id);
+                foreach (Utilidad item in util)
+                {
+                    var u = Departamento.utilidades.Find(x => x.ID == item.ID);
+                    if (u != null)
+                    {
+                        _unitOfWork.Utilidades.Delete(u);
+                        Departamento.utilidades.Remove(u);
+                    }
+                }
+                _unitOfWork.Commit();
+                return Departamento;
             }
             return null;
         }

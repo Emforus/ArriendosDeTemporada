@@ -21,5 +21,7 @@ namespace ArriendosDeTemporada.core.Models
         public List<string> fotografias { get; set; }
         public List<Utilidad> utilidades { get; set; }
         public List<Factura> facturas { get; set; }
+        public ICollection<ServicioExtra> Servicios { get; set; }
+        public List<ServicioDepartamento> ServiciosDisponibles { get; set; }
     }
 }

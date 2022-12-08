@@ -12,8 +12,10 @@ namespace ArriendosDeTemporada.data.Repos.Shared
         IEnumerable<T> GetAll();
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
         void Add(T entity);
+        void AddMany(T[] ents);
         void Update(T entity);
         void Delete(T entity);
+        void DeleteMany(T[] ents);
         IQueryable<T> GetAllQueryable();
         IQueryable<T> Query(Expression<Func<T, bool>> predicate);
     }

@@ -65,5 +65,37 @@ namespace ArriendosDeTemporada.business
             }
             return null;
         }
+
+        public async Task<Factura> CheckIn(Factura fac)
+        {
+            var Factura = await _unitOfWork.Facturas.GetFactura(fac.ID).FirstOrDefaultAsync();
+            if (Factura != null)
+            {
+                var departamento = await _unitOfWork.Departamentos.GetDepartamento(fac.departamento.idDepartamento).FirstOrDefaultAsync();
+                departamento.Estado = "En Uso";
+                Factura.estado = "En Curso";
+                Factura.fechaHoraCheckIn = DateTime.Now;
+
+                _unitOfWork.Commit();
+                return Factura;
+            }
+            return null;
+        }
+
+        public async Task<Factura> CheckOut(Factura fac)
+        {
+            var Factura = await _unitOfWork.Facturas.GetFactura(fac.ID).FirstOrDefaultAsync();
+            if (Factura != null)
+            {
+                var departamento = await _unitOfWork.Departamentos.GetDepartamento(Factura.departamento.idDepartamento).FirstOrDefaultAsync();
+                departamento.Estado = "Disponible";
+                Factura.estado = "Completada";
+                Factura.fechaHoraCheckOut = DateTime.Now;
+
+                _unitOfWork.Commit();
+                return Factura;
+            }
+            return null;
+        }
     }
 }

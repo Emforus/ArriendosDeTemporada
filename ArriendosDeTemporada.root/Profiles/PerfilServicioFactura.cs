@@ -12,17 +12,7 @@ namespace ArriendosDeTemporada.root.Profiles
         public PerfilServicioFactura()
         {
 
-            CreateMap<ServicioFactura, ServicioFacturaDTO>().ForMember(
-                x => x.valorServicio, y => y.MapFrom(z => DeterminarValor(z.Factura.cantidadClientes, z.Servicio)));
-        }
-
-        int DeterminarValor(int clientes, ServicioExtra serv)
-        {
-            if (serv.servicioUnitario)
-            {
-                return clientes*serv.costoServicio;
-            }
-            return serv.costoServicio;
+            CreateMap<ServicioFactura, ServicioFacturaDTO>().ReverseMap();
         }
     }
 }

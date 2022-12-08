@@ -16,5 +16,10 @@ namespace ArriendosDeTemporada.business.Shared
         Task<Departamento> SetEstadoDepartamento(int id);
         Task<Departamento> EditarDepartamento(int id, Departamento depto);
         Task<FacturaDTO> ReservarDepartamento(Factura factura);
+        Task<IQueryable<UtilidadDTO>> ListarUtilidades(int id);
+        Task<Departamento> AñadirUtilidades(Utilidad[] util, int id);
+        Task<Departamento> RemoverUtilidades(Utilidad[] util, int id);
+        Task<IQueryable<ServicioDepartamentoDTO>> ListarServiciosDisponibles(int id);
+
     }
 }

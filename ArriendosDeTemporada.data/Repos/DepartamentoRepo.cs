@@ -16,5 +16,9 @@ namespace ArriendosDeTemporada.data.Repos
         {
             return _context.Set<Departamento>().Where(x => x.idDepartamento == id);
         }
+        public Task<List<ServicioDepartamento>> GetServiciosPorDepartamento(int id)
+        {
+            return _context.Set<ServicioDepartamento>().Where(x => x.IDDepartamento == id).AsQueryable().ToListAsync();
+        }
     }
 }

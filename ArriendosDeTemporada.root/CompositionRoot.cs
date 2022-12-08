@@ -26,7 +26,7 @@ namespace ArriendosDeTemporada.root
             services.AddDbContextPool<DatabaseContext>(options => options.UseNpgsql(DatabaseConnectionStr));
 
             services.AddAutoMapper(typeof(PerfilUsuario), typeof(PerfilDepartamento), typeof(PerfilFactura), 
-                typeof(PerfilServicio), typeof(PerfilServicioFactura), typeof(PerfilUtilidad));
+                typeof(PerfilServicio), typeof(PerfilServicioFactura), typeof(PerfilUtilidad), typeof(PerfilServicioDepartamento));
             services.AddScoped<DatabaseContext>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -36,11 +36,13 @@ namespace ArriendosDeTemporada.root
             services.AddScoped<IDepartamentoRepo, DepartamentoRepo>();
             services.AddScoped<IFacturaRepo, FacturaRepo>();
             services.AddScoped<IUtilidadRepo, UtilidadRepo>();
+            services.AddScoped<IServicioRepo, ServicioRepo>();
 
             // Añadir servicios a dependencias
             services.AddScoped<IUsuarioServicio, UsuarioServicio>();
             services.AddScoped<IDepartamentoServicio, DepartamentoServicio>();
             services.AddScoped<IFacturaServicio, FacturaServicio>();
+            services.AddScoped<IServicioExtraServicio, ServicioExtraServicio>();
         }
     }
 }

@@ -39,6 +39,11 @@ namespace ArriendosDeTemporada.data.Repos
             if (entity == null) throw new ArgumentNullException("entity");
             entities.Add(entity);
         }
+        public void AddMany(T[] ents)
+        {
+            if (ents == null || ents.Length == 0) throw new ArgumentNullException("entity");
+            entities.AddRange(ents);
+        }
         public void Update(T entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
@@ -47,6 +52,11 @@ namespace ArriendosDeTemporada.data.Repos
         {
             if (entity == null) throw new ArgumentNullException("entity");
             entities.Remove(entity);
+        }
+        public void DeleteMany(T[] ents)
+        {
+            if (ents == null || ents.Length == 0) throw new ArgumentNullException("entity");
+            entities.RemoveRange(ents);
         }
 
         public IQueryable<T> GetAllQueryable()
@@ -58,5 +68,7 @@ namespace ArriendosDeTemporada.data.Repos
         {
             return entities.Where(predicate).AsQueryable();
         }
+
+
     }
 }

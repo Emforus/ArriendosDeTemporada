@@ -10,5 +10,6 @@ namespace ArriendosDeTemporada.data.Repos.Shared
     public interface IFacturaRepo : IRepository<Factura>
     {
         IQueryable<Factura> GetFactura(int id);
+        IQueryable<ServicioFactura> GetServiciosPorFactura(int id);
     }
 }

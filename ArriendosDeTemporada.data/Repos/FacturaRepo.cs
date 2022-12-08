@@ -16,5 +16,9 @@ namespace ArriendosDeTemporada.data.Repos
         {
             return _context.Set<Factura>().Where(x => x.ID == id);
         }
+        public IQueryable<ServicioFactura> GetServiciosPorFactura(int id)
+        {
+            return _context.Set<ServicioFactura>().Where(x => x.IDFactura == id);
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace ArriendosDeTemporada.api.Controllers
 {
     [Route("api/reservas")]
     [ApiController]
+    [DisableRequestSizeLimit]
     public class FacturaController : ControllerBase
     {
         private readonly IFacturaServicio facturaServicio;
@@ -63,7 +64,45 @@ namespace ArriendosDeTemporada.api.Controllers
         {
             try
             {
+                Console.WriteLine("ID: " + factura.ID + ", Estado: " + factura.estado);
                 var fac = await facturaServicio.AnularFactura(factura);
+                if (fac == null)
+                {
+                    return NotFound($"Reserva con ID {factura.ID} no encontrada");
+                }
+                return Ok(fac);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
+            }
+        }
+
+        [HttpPut("checkin")]
+        public async Task<ActionResult<Factura>> CheckIn([FromBody] Factura factura)
+        {
+            try
+            {
+                Console.WriteLine("ID: "+factura.ID + ", Estado: " + factura.estado);
+                var fac = await facturaServicio.CheckIn(factura);
+                if (fac == null)
+                {
+                    return NotFound($"Reserva con ID {factura.ID} no encontrada");
+                }
+                return Ok(fac);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
+            }
+        }
+
+        [HttpPut("checkout")]
+        public async Task<ActionResult<Factura>> Checkout([FromBody] Factura factura)
+        {
+            try
+            {
+                var fac = await facturaServicio.CheckOut(factura);
                 if (fac == null)
                 {
                     return NotFound($"Reserva con ID {factura.ID} no encontrada");

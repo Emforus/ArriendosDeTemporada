@@ -12,10 +12,12 @@ namespace ArriendosDeTemporada.core.Models.DTOs
         public DateTime? fechaHoraCheckOut { get; set; }
         public DateTime fechaHoraReserva { get; set; }
         public int duracion { get; set; }
+        public int valor { get; set; }
         public int valorIVA { get; set; }
+        public int valorDeposito { get; set; }
+        public int valorServicios { get; set; }
         public int cantidadClientes { get; set; }
         public string estado { get; set; }
-        public int valorTotal { get; set; }
         public UsuarioDTO usuario { get; set; }
         public DepartamentoDTO departamento { get; set; }
     }

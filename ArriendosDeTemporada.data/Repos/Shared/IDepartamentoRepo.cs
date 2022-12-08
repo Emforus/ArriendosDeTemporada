@@ -10,5 +10,6 @@ namespace ArriendosDeTemporada.data.Repos.Shared
     public interface IDepartamentoRepo : IRepository<Departamento>
     {
         IQueryable<Departamento> GetDepartamento(int id);
+        Task<List<ServicioDepartamento>> GetServiciosPorDepartamento(int id);
     }
 }

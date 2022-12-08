@@ -12,6 +12,7 @@ namespace ArriendosDeTemporada.core.Models.DTOs
         public DateTime fechaContrato { get; set; }
         public DateTime fechaUltimaRenovacion { get; set; }
         public DateTime fechaExpiracion { get; set; }
+        public bool estadoLogico { get; set; }
         public int costoServicio { get; set; }
         public bool servicioUnitario { get; set; }
     }

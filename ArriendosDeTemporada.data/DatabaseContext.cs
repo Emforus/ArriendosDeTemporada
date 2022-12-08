@@ -13,6 +13,8 @@ namespace ArriendosDeTemporada.data
         public DbSet<Factura> Facturas { get; set; }
         public DbSet<ServicioExtra> ServiciosExtra { get; set; }
         public DbSet<Utilidad> Utilidades { get; set; }
+        public DbSet<ServicioFactura> ServicioFactura { get; set; }
+        public DbSet<ServicioDepartamento> ServicioDepartamento { get; set; }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
@@ -66,11 +68,16 @@ namespace ArriendosDeTemporada.data
 
             modelBuilder.Entity<Utilidad>().Property(c => c.ID).HasColumnType("int").UseIdentityColumn().IsRequired();
             modelBuilder.Entity<Utilidad>().Property(c => c.nombre).HasColumnType("varchar(40)").IsRequired();
-            modelBuilder.Entity<Utilidad>().Property(c => c.descripcion).HasColumnType("varchar(40)").IsRequired(false);
+            modelBuilder.Entity<Utilidad>().Property(c => c.descripcion).HasColumnType("varchar(200)").IsRequired(false);
             modelBuilder.Entity<Utilidad>().Property(c => c.valor).HasColumnType("int").IsRequired();
+            modelBuilder.Entity<Utilidad>().Property(c => c.cantidad).HasColumnType("int").IsRequired();
+            modelBuilder.Entity<Utilidad>().Property(c => c.estado).HasColumnType("varchar(40)").IsRequired();
 
             modelBuilder.Entity<Factura>().Property(p => p.ID).HasColumnType("int").UseIdentityColumn().IsRequired();
+            modelBuilder.Entity<Factura>().Property(p => p.valor).HasColumnType("int").IsRequired();
             modelBuilder.Entity<Factura>().Property(p => p.valorIVA).HasColumnType("int").IsRequired();
+            modelBuilder.Entity<Factura>().Property(p => p.valorDeposito).HasColumnType("int").IsRequired();
+            modelBuilder.Entity<Factura>().Property(p => p.valorServicios).HasColumnType("int").IsRequired();
             modelBuilder.Entity<Factura>().Property(p => p.duracion).HasColumnType("int").IsRequired();
             modelBuilder.Entity<Factura>().Property(p => p.estado).HasColumnType("varchar(40)").IsRequired();
             modelBuilder.Entity<Factura>().Property(p => p.fechaHoraGeneracion).HasColumnType("timestamp").IsRequired();
@@ -101,7 +108,7 @@ namespace ArriendosDeTemporada.data
 
             //Configuracion de relaciones
             modelBuilder.Entity<Factura>().HasOne(f => f.departamento).WithMany(d => d.facturas);
-            modelBuilder.Entity<Factura>().HasOne(f => f.usuario).WithMany(u => u.facturas);            
+            modelBuilder.Entity<Factura>().HasOne(f => f.usuario).WithMany(u => u.facturas);
             modelBuilder.Entity<Factura>().HasMany(f => f.Servicios).WithMany(p => p.Facturas).UsingEntity<ServicioFactura>(
                 x => x.HasOne(pp => pp.Servicio).WithMany(p => p.ServiciosPorFactura).HasForeignKey(pp => pp.IDServicio),
                 x => x.HasOne(pp => pp.Factura).WithMany(p => p.ServiciosPorFactura).HasForeignKey(pp => pp.IDFactura),
@@ -110,8 +117,16 @@ namespace ArriendosDeTemporada.data
                     x.Property(pp => pp.valorServicio).HasDefaultValue(0);
                     x.HasKey(pp => new { pp.IDServicio, pp.IDFactura });
                 });
+            modelBuilder.Entity<Departamento>().HasMany(f => f.Servicios).WithMany(p => p.Departamentos).UsingEntity<ServicioDepartamento>(
+                x => x.HasOne(pp => pp.Servicio).WithMany(p => p.ServiciosDisponibles).HasForeignKey(pp => pp.IDServicio),
+                x => x.HasOne(pp => pp.Departamento).WithMany(p => p.ServiciosDisponibles).HasForeignKey(pp => pp.IDDepartamento),
+                x =>
+                {
+                    x.HasKey(pp => new { pp.IDServicio, pp.IDDepartamento });
+                });
             modelBuilder.Entity<Utilidad>().HasOne(f => f.departamento).WithMany(u => u.utilidades);
             modelBuilder.Entity<Departamento>().HasOne(f => f.serviciosPrincipales).WithOne().HasForeignKey<GenericService>(g => g.idDepartamento);
+            modelBuilder.Entity<Factura>().HasOne(f => f.multa).WithOne(u => u.factura).HasForeignKey<Multa>(m => m.IDFactura);
         }
     }
 }

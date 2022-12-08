@@ -19,5 +19,8 @@ namespace ArriendosDeTemporada.core.Models.DTOs
         public GenericService serviciosPrincipales { get; set; }
         public bool estadoLogico { get; set; }
         public List<string> fotografias { get; set; }
+        public List<FacturaDTO> facturas { get; set; }
+        public List<UtilidadDTO> utilidades { get; set; }
+        public List<ServicioDepartamentoDTO> ServiciosDisponibles { get; set; }
     }
 }

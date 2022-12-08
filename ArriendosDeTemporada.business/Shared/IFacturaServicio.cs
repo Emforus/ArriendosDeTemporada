@@ -15,5 +15,7 @@ namespace ArriendosDeTemporada.business.Shared
         IQueryable<FacturaDTO> ListarFacturasPorCliente(int id);
         Task<FacturaDTO> BuscarFactura(int id);
         Task<Factura> AnularFactura(Factura factura);
+        Task<Factura> CheckIn(Factura factura);
+        Task<Factura> CheckOut(Factura factura);
     }
 }
