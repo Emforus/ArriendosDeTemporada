@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\ArriendosDeTemporada.business.csproj": {}
+    "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\ArriendosDeTemporada.business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\ArriendosDeTemporada.business.csproj": {
+    "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\ArriendosDeTemporada.business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\ArriendosDeTemporada.business.csproj",
+        "projectUniqueName": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\ArriendosDeTemporada.business.csproj",
         "projectName": "ArriendosDeTemporada.business",
-        "projectPath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\ArriendosDeTemporada.business.csproj",
-        "packagesPath": "C:\\Users\\cami_escobarj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\obj\\",
+        "projectPath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\ArriendosDeTemporada.business.csproj",
+        "packagesPath": "C:\\Users\\seb_carrascot\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cami_escobarj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\seb_carrascot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj": {
-                "projectPath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj"
+              "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj": {
+                "projectPath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj"
               },
-              "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj": {
-                "projectPath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj"
+              "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj": {
+                "projectPath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj"
               }
             }
           }
@@ -54,6 +54,14 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.Extensions.FileProviders.Physical": {
+              "target": "Package",
+              "version": "[3.1.32, )"
             }
           },
           "imports": [
@@ -72,21 +80,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj": {
+    "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj",
+        "projectUniqueName": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj",
         "projectName": "ArriendosDeTemporada.core",
-        "projectPath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj",
-        "packagesPath": "C:\\Users\\cami_escobarj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\obj\\",
+        "projectPath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj",
+        "packagesPath": "C:\\Users\\seb_carrascot\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cami_escobarj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\seb_carrascot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -122,26 +130,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj": {
+    "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj",
+        "projectUniqueName": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj",
         "projectName": "ArriendosDeTemporada.data",
-        "projectPath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj",
-        "packagesPath": "C:\\Users\\cami_escobarj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\obj\\",
+        "projectPath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\ArriendosDeTemporada.data.csproj",
+        "packagesPath": "C:\\Users\\seb_carrascot\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cami_escobarj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\seb_carrascot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -155,8 +177,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj": {
-                "projectPath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj"
+              "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj": {
+                "projectPath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj"
               }
             }
           }
@@ -206,7 +228,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

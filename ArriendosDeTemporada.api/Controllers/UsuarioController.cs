@@ -35,9 +35,9 @@ namespace ArriendosDeTemporada.api.Controllers
                 UsuarioServicio.CrearUsuario(usuario);
                 return Ok(usuario);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error interno: No se pudo realizar la operacion");
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
             }
         }
 

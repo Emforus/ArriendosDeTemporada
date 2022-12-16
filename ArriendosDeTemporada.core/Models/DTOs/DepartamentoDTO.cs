@@ -7,6 +7,7 @@ namespace ArriendosDeTemporada.core.Models.DTOs
     public class DepartamentoDTO
     {
         public int idDepartamento { get; set; }
+        public string nombreDepartamento { get; set; }
         public string ubicacionDepartamento { get; set; }
         public string regionDepartamento { get; set; }
         public int valorBase { get; set; }

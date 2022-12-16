@@ -42,6 +42,7 @@ namespace ArriendosDeTemporada.data
 
             //Configuracion de columnas
             modelBuilder.Entity<Departamento>().Property(c => c.idDepartamento).HasColumnType("int").UseIdentityColumn().IsRequired();
+            modelBuilder.Entity<Departamento>().Property(c => c.nombreDepartamento).HasColumnType("varchar(40)").IsRequired();
             modelBuilder.Entity<Departamento>().Property(c => c.ubicacionDepartamento).HasColumnType("varchar(40)").IsRequired();
             modelBuilder.Entity<Departamento>().Property(c => c.regionDepartamento).HasColumnType("varchar(40)").IsRequired();
             modelBuilder.Entity<Departamento>().Property(c => c.descripcionDepartamento).HasColumnType("varchar(200)").IsRequired();
@@ -87,7 +88,7 @@ namespace ArriendosDeTemporada.data
 
             modelBuilder.Entity<ServicioExtra>().Property(p => p.ID).HasColumnType("int").UseIdentityColumn().IsRequired();
             modelBuilder.Entity<ServicioExtra>().Property(p => p.nombre).HasColumnType("varchar(40)").IsRequired();
-            modelBuilder.Entity<ServicioExtra>().Property(p => p.descripcion).HasColumnType("varchar(40)").IsRequired();
+            modelBuilder.Entity<ServicioExtra>().Property(p => p.descripcion).HasColumnType("varchar(200)").IsRequired();
             modelBuilder.Entity<ServicioExtra>().Property(p => p.costoServicio).HasColumnType("int").IsRequired();
             modelBuilder.Entity<ServicioExtra>().Property(p => p.servicioUnitario).HasColumnType("boolean").IsRequired();
             modelBuilder.Entity<ServicioExtra>().Property(p => p.fechaContrato).HasColumnType("date").IsRequired();

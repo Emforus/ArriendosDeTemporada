@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using ArriendosDeTemporada.core.Models;
 using ArriendosDeTemporada.core.Models.DTOs;
+using Microsoft.AspNetCore.Http;
 
 namespace ArriendosDeTemporada.business.Shared
 {
@@ -13,6 +14,7 @@ namespace ArriendosDeTemporada.business.Shared
         IEnumerable<DepartamentoDTO> ListarDepartamentos();
         Task<DepartamentoDTO> BuscarDepartamento(int id);
         void CrearDepartamento(Departamento departamento);
+        void CargarFotos(List<IFormFile> pics);
         Task<Departamento> SetEstadoDepartamento(int id);
         Task<Departamento> EditarDepartamento(int id, Departamento depto);
         Task<FacturaDTO> ReservarDepartamento(Factura factura);

@@ -53,6 +53,10 @@ namespace ArriendosDeTemporada.data.Migrations
                     b.Property<List<string>>("fotografias")
                         .HasColumnType("varchar(100)[]");
 
+                    b.Property<string>("nombreDepartamento")
+                        .IsRequired()
+                        .HasColumnType("varchar(40)");
+
                     b.Property<string>("regionDepartamento")
                         .IsRequired()
                         .HasColumnType("varchar(40)");

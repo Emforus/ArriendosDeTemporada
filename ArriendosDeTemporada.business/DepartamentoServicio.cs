@@ -11,6 +11,9 @@ using BCrypt.Net;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Collections;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using Microsoft.Extensions.FileProviders;
 
 namespace ArriendosDeTemporada.business
 {
@@ -41,10 +44,30 @@ namespace ArriendosDeTemporada.business
             // Valores por defecto
             Departamento.estadoLogico = true;
             Departamento.Estado = "Disponible";
-            Departamento.fechaRegistroDepartamento = DateTime.Now;
+
             _unitOfWork.Departamentos.Add(Departamento);
             _unitOfWork.Commit();
             return;
+        }
+
+        public void CargarFotos(List<IFormFile> pics)
+        {
+            if (pics != null && pics.Count > 0)
+            {
+                foreach (IFormFile img in pics)
+                {
+                    var fileName = Path.GetFileName(img.FileName);
+                    Console.WriteLine(fileName);
+                    var filePath = new PhysicalFileProvider(
+                        "C:/Users/seb_carrascot/Desktop/Front_ArriendosDeTemporada/src/assets/img/deptos"
+                    ).Root + $@"/{fileName}";
+                    using (FileStream fs = File.Create(filePath))
+                    {
+                        img.CopyTo(fs);
+                        fs.Flush();
+                    }
+                }
+            }
         }
 
         public async Task<Departamento> SetEstadoDepartamento(int id)
@@ -66,6 +89,7 @@ namespace ArriendosDeTemporada.business
             var Departamento = await _unitOfWork.Departamentos.Find(x => x.idDepartamento == id).AsQueryable().FirstOrDefaultAsync();
             if (Departamento != null)
             {
+                Departamento.nombreDepartamento = depto.nombreDepartamento;
                 Departamento.ubicacionDepartamento = depto.ubicacionDepartamento;
                 Departamento.regionDepartamento = depto.regionDepartamento;
                 Departamento.descripcionDepartamento = depto.descripcionDepartamento;

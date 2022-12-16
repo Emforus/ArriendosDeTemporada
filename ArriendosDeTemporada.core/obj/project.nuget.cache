@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "prIIGGqJKvDI++iri/cqHWjNlmp3OLfLwCkKCuD/Ysnr5RaoervxPBR5xKmcuUY8hlnQHqB3O2CPNeWYhyrwxg==",
+  "dgSpecHash": "FlIC1B/LDOE1DvJ9o58W7wd0I+GGct2qrr+/4JLml4JOWWvs29oKvbNMx77asaIgox+6jvn7GgVNagbfhTILkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cami_escobarj\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\seb_carrascot\\Desktop\\ArriendosDeTemporada\\ArriendosDeTemporada.core\\ArriendosDeTemporada.core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\seb_carrascot\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\seb_carrascot\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\seb_carrascot\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
   "logs": []
 }

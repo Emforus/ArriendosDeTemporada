@@ -20,5 +20,6 @@ namespace ArriendosDeTemporada.core.Models.DTOs
         public string estado { get; set; }
         public UsuarioDTO usuario { get; set; }
         public DepartamentoDTO departamento { get; set; }
+        public List<ServicioFacturaDTO> ServiciosPorFactura { get; set; }
     }
 }
